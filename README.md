@@ -173,15 +173,18 @@ The scripts generate various visualizations to help understand the data. These v
 ### Examples of Multiple Products
 
 #### 2 Products Example
-![2 Products Example](multiple_products/examples/2_products.png)
+<img src="multiple_products/examples/2_products.png" alt="2 Products Example" width="800"/>
+
 - Shows an example of an adviser offering 2 different products with their fee structures
 
 #### 3 Products Example
-![3 Products Example](multiple_products/examples/3_products.png)
+<img src="multiple_products/examples/3_products.png" alt="3 Products Example" width="800"/>
+
 - Shows an example of an adviser offering 3 different products with their fee structures
 
 #### 4 Products Example
-![4 Products Example](multiple_products/examples/4_products.png)
+<img src="multiple_products/examples/4_products.png" alt="4 Products Example" width="800"/>
+
 - Shows an example of an adviser offering 4 different products with their fee structures
 
 ## Visualizations Directory

@@ -78,24 +78,95 @@ The project consists of several Python scripts, each focusing on different aspec
 
 ### Visualizations
 
-The scripts generate various visualizations to help understand the data:
+The scripts generate various visualizations to help understand the data. These visualizations are organized into several directories:
 
-1. **Fee Structure Types**
-   - Distribution of flat fee vs. tiered fee structures
+#### Root Directory Visualizations
 
-2. **Fee Percentages by Tier**
-   - Box plots and violin plots showing the distribution of fee percentages for each tier
+1. **`fee_trends_over_time.png`**
+   - Shows how fee percentages have changed over time for the first product offered by financial advisers
+   - Tracks the average fee percentage for each tier across different years
+   - Helps identify if fees are trending upward or downward over time
+   - Provides insights into market pricing evolution in the financial advisory industry
 
-3. **Fee Trends Over Time**
-   - Line charts showing changes in average fee percentages over time
+2. **`fee_percentages_by_tier.png`**
+   - Displays the distribution of fee percentages across different asset tiers
+   - Shows how advisers typically structure their fees based on client asset levels
+   - Demonstrates the common tiered pricing model where higher tiers (larger asset amounts) generally have lower fee percentages
 
-4. **Minimum Investment**
-   - Histograms showing the distribution of minimum investment requirements
+3. **`fee_distributions.png`**
+   - Shows the overall distribution of fee percentages across all advisers
+   - Helps identify the most common fee ranges in the market
+   - Highlights outliers that charge significantly higher or lower fees than the industry average
 
-5. **Multiple Products**
-   - Examples of advisers with multiple products
-   - Distributions of product counts and tier differences
-   - Relationships between product count and fee differences
+4. **`minimum_investment_distribution.png`**
+   - Displays the distribution of minimum investment requirements set by financial advisers
+   - Helps understand the entry barriers for clients seeking advisory services
+   - Identifies market segments targeted by different advisers
+
+5. **`product_count_distribution.png`**
+   - Shows how many different fee products/services advisers typically offer
+   - Reveals whether most advisers specialize in a single product or diversify across multiple offerings
+
+6. **`tier_count_distribution.png`**
+   - Displays the distribution of how many fee tiers advisers typically use in their pricing structures
+   - Helps understand the complexity of fee schedules in the industry
+
+#### Multiple Products Directory (`multiple_products/`)
+
+1. **`product_count_distribution.png`**
+   - Specifically focuses on advisers offering multiple products
+   - Shows the distribution of how many different products they typically offer
+   - Helps identify the level of service diversification in the industry
+
+2. **`fee_difference_distribution.png`**
+   - Shows the distribution of maximum fee differences between different products offered by the same adviser
+   - Reveals how much price variation exists within an adviser's product lineup
+   - Indicates potential value differentiation or market segmentation strategies
+
+3. **`product_count_vs_fee_diff.png`**
+   - Examines the relationship between the number of products an adviser offers and the maximum fee difference between those products
+   - Helps understand if advisers with more diverse product offerings tend to have greater fee variations
+
+4. **`tier_difference_distribution.png`**
+   - Shows the distribution of differences in tier counts between products offered by the same adviser
+   - Reveals how advisers vary the complexity of their fee structures across different products
+
+5. **`pattern_distribution.png`**
+   - Shows the distribution of common patterns in how advisers structure their multiple product offerings
+   - Identifies patterns such as having higher fees for specialized services or consistent fee structures across products
+
+6. **Examples Directory (`multiple_products/examples/`)**
+   - **`2_products.png`, `3_products.png`, `4_products.png`**: Provide specific examples of fee structures for advisers offering 2, 3, and 4 different products respectively
+   - Serve as case studies to understand real-world fee structure variations
+
+#### Visualizations Directory (`visualizations/`)
+
+1. **`product_count_vs_max_tiers.png`**
+   - Examines the relationship between the number of products an adviser offers and the maximum number of fee tiers they use
+   - Helps understand if product diversification correlates with more complex fee structures
+
+2. **`fee_percentages_product_0.png`, `fee_percentages_product_1.png`, etc.**
+   - Show the distribution of fee percentages by tier for each product category (0, 1, 2, 3)
+   - Help compare fee structures across different types of advisory services
+
+3. **Examples Directory (`visualizations/examples/`)**
+   - **`single_product_multi_tier.png`**: Provides a detailed example of an adviser offering a single product with multiple fee tiers, showing how fees decrease as asset levels increase
+   - **`multiple_products.png`**: Shows an example of an adviser offering multiple products with different fee structures, illustrating real-world product differentiation strategies
+
+4. **Comparison Directory (`visualizations/comparison/`)**
+   - **`first_tier_distribution.png`**: Shows the distribution of first-tier fees across all advisers, helping identify the most common entry-level fees in the market
+   - **`first_tier_by_year.png`**: Tracks how first-tier fees have changed over time, revealing market pricing trends for entry-level advisory services
+   - **`adviser_*_fee_changes.png`**: Track how specific advisers have changed their fee structures over time, providing case studies of individual pricing strategies and adaptations
+
+#### Analysis Results Directory (`analysis_results/`)
+
+1. **`fee_structure_types.png`**
+   - Categorizes and displays the distribution of different fee structure types used by advisers (e.g., tiered, flat, hybrid)
+   - Helps understand the prevalence of different pricing models in the industry
+
+2. **`negotiable_fees.png`**
+   - Shows the proportion of advisers who offer negotiable fees versus those with fixed fee structures
+   - Reveals flexibility in pricing across the industry
 
 ## Key Findings
 
@@ -181,12 +252,19 @@ The scripts generate various visualizations to help understand the data:
 
 ## Dependencies
 
-- pandas
-- numpy
-- matplotlib
-- seaborn
-- re (regular expressions)
-- datetime
+- pandas >= 1.3.0
+- numpy >= 1.20.0
+- matplotlib >= 3.4.0
+- seaborn >= 0.11.0
+- requests >= 2.25.0
+- re (regular expressions, standard library)
+- datetime (standard library)
+- os (standard library)
+- sys (standard library)
+- time (standard library)
+- json (standard library)
+- getpass (standard library)
+- csv (standard library)
 
 ## Conclusion
 
@@ -194,4 +272,15 @@ This project provides a comprehensive analysis of financial adviser fee structur
 
 The analysis reveals that tiered fee structures are the most common approach, with fees generally decreasing as AUM increases. Most advisers offer negotiable fees, and many have multiple products with different fee structures. The median minimum investment requirement is $100,000, but there is significant variation across advisers.
 
+The extensive visualizations created in this project provide deep insights into fee structures, helping to understand:
+- How fees vary across different asset tiers
+- How fee structures have evolved over time
+- The complexity of fee schedules in the industry
+- How advisers differentiate their products through pricing
+- The relationship between product diversity and fee structure complexity
+
 These insights can be used for benchmarking, competitive analysis, and market segmentation in the financial advisory industry.
+
+## Repository Information
+
+This repository is maintained by TanveerAhmedKhan. The analysis was performed on a dataset of 114 CSV files containing financial adviser fee structures, with each file containing approximately 1,500 rows across 18 columns.

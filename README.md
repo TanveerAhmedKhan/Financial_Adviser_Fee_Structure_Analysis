@@ -78,121 +78,182 @@ The project consists of several Python scripts, each focusing on different aspec
 
 ### Visualizations
 
-The scripts generate various visualizations to help understand the data. These visualizations are organized into several directories. Below are some of the key visualizations with descriptions:
+The scripts generate various visualizations to help understand the data. These visualizations are organized into several directories. Below are all the visualizations with descriptions:
 
-#### Root Directory Visualizations
+## Root Directory Visualizations
 
-1. **`fee_trends_over_time.png`**
-   - Shows how fee percentages have changed over time for the first product offered by financial advisers
-   - Tracks the average fee percentage for each tier across different years
-   - Helps identify if fees are trending upward or downward over time
-   - Provides insights into market pricing evolution in the financial advisory industry
+### Fee Trends Over Time
+![Fee Trends Over Time](fee_trends_over_time.png)
+- Shows how fee percentages have changed over time for the first product offered by financial advisers
+- Tracks the average fee percentage for each tier across different years
+- Helps identify if fees are trending upward or downward over time
 
-   ![Fee Trends Over Time](fee_trends_over_time.png)
+### Fee Percentages by Tier
+![Fee Percentages by Tier](fee_percentages_by_tier.png)
+- Displays the distribution of fee percentages across different asset tiers
+- Shows how advisers typically structure their fees based on client asset levels
+- Demonstrates the common tiered pricing model where higher tiers have lower fee percentages
 
-2. **`fee_percentages_by_tier.png`**
-   - Displays the distribution of fee percentages across different asset tiers
-   - Shows how advisers typically structure their fees based on client asset levels
-   - Demonstrates the common tiered pricing model where higher tiers (larger asset amounts) generally have lower fee percentages
+### Fee Distributions
+![Fee Distributions](fee_distributions.png)
+- Shows the overall distribution of fee percentages across all advisers
+- Helps identify the most common fee ranges in the market
+- Highlights outliers that charge significantly higher or lower fees than the industry average
 
-   ![Fee Percentages by Tier](fee_percentages_by_tier.png)
+### Minimum Investment Distribution
+![Minimum Investment Distribution](minimum_investment_distribution.png)
+- Displays the distribution of minimum investment requirements set by financial advisers
+- Helps understand the entry barriers for clients seeking advisory services
+- Identifies market segments targeted by different advisers
 
-3. **`fee_distributions.png`**
-   - Shows the overall distribution of fee percentages across all advisers
-   - Helps identify the most common fee ranges in the market
-   - Highlights outliers that charge significantly higher or lower fees than the industry average
+### Product Count Distribution
+![Product Count Distribution](product_count_distribution.png)
+- Shows how many different fee products/services advisers typically offer
+- Reveals whether most advisers specialize in a single product or diversify across multiple offerings
 
-   ![Fee Distributions](fee_distributions.png)
+### Tier Count Distribution
+![Tier Count Distribution](tier_count_distribution.png)
+- Displays the distribution of how many fee tiers advisers typically use in their pricing structures
+- Helps understand the complexity of fee schedules in the industry
 
-4. **`minimum_investment_distribution.png`**
-   - Displays the distribution of minimum investment requirements set by financial advisers
-   - Helps understand the entry barriers for clients seeking advisory services
-   - Identifies market segments targeted by different advisers
+## Analysis Results Directory
 
-   ![Minimum Investment Distribution](minimum_investment_distribution.png)
+### Fee Structure Types
+![Fee Structure Types](analysis_results/fee_structure_types.png)
+- Categorizes and displays the distribution of different fee structure types used by advisers
+- Helps understand the prevalence of different pricing models in the industry
 
-5. **`product_count_distribution.png`**
-   - Shows how many different fee products/services advisers typically offer
-   - Reveals whether most advisers specialize in a single product or diversify across multiple offerings
+### Negotiable Fees
+![Negotiable Fees](analysis_results/negotiable_fees.png)
+- Shows the proportion of advisers who offer negotiable fees versus those with fixed fee structures
+- Reveals flexibility in pricing across the industry
 
-6. **`tier_count_distribution.png`**
-   - Displays the distribution of how many fee tiers advisers typically use in their pricing structures
-   - Helps understand the complexity of fee schedules in the industry
+### Fee Percentages by Tier (Analysis Results)
+![Fee Percentages by Tier](analysis_results/fee_percentages_by_tier.png)
+- Alternative visualization of fee percentages across different asset tiers
+- Formatted for inclusion in the final analysis report
 
-#### Multiple Products Directory (`multiple_products/`)
+### Fee Trends Over Time (Analysis Results)
+![Fee Trends Over Time](analysis_results/fee_trends_over_time.png)
+- Alternative visualization of fee trends over time
+- Formatted for inclusion in the final analysis report
 
-1. **`product_count_distribution.png`**
-   - Specifically focuses on advisers offering multiple products
-   - Shows the distribution of how many different products they typically offer
-   - Helps identify the level of service diversification in the industry
+### Minimum Investment
+![Minimum Investment](analysis_results/minimum_investment.png)
+- Alternative visualization of minimum investment requirements
+- Formatted for inclusion in the final analysis report
 
-   ![Product Count Distribution](multiple_products/product_count_distribution.png)
+## Multiple Products Directory
 
-2. **`fee_difference_distribution.png`**
-   - Shows the distribution of maximum fee differences between different products offered by the same adviser
-   - Reveals how much price variation exists within an adviser's product lineup
-   - Indicates potential value differentiation or market segmentation strategies
+### Product Count Distribution
+![Product Count Distribution](multiple_products/product_count_distribution.png)
+- Specifically focuses on advisers offering multiple products
+- Shows the distribution of how many different products they typically offer
 
-   ![Fee Difference Distribution](multiple_products/fee_difference_distribution.png)
+### Fee Difference Distribution
+![Fee Difference Distribution](multiple_products/fee_difference_distribution.png)
+- Shows the distribution of maximum fee differences between products offered by the same adviser
+- Reveals how much price variation exists within an adviser's product lineup
 
-3. **`product_count_vs_fee_diff.png`**
-   - Examines the relationship between the number of products an adviser offers and the maximum fee difference between those products
-   - Helps understand if advisers with more diverse product offerings tend to have greater fee variations
+### Product Count vs Fee Difference
+![Product Count vs Fee Difference](multiple_products/product_count_vs_fee_diff.png)
+- Examines the relationship between the number of products an adviser offers and the maximum fee difference
+- Helps understand if advisers with more diverse product offerings tend to have greater fee variations
 
-4. **`tier_difference_distribution.png`**
-   - Shows the distribution of differences in tier counts between products offered by the same adviser
-   - Reveals how advisers vary the complexity of their fee structures across different products
+### Tier Difference Distribution
+![Tier Difference Distribution](multiple_products/tier_difference_distribution.png)
+- Shows the distribution of differences in tier counts between products offered by the same adviser
+- Reveals how advisers vary the complexity of their fee structures across different products
 
-5. **`pattern_distribution.png`**
-   - Shows the distribution of common patterns in how advisers structure their multiple product offerings
-   - Identifies patterns such as having higher fees for specialized services or consistent fee structures across products
+### Pattern Distribution
+![Pattern Distribution](multiple_products/pattern_distribution.png)
+- Shows the distribution of common patterns in how advisers structure their multiple product offerings
+- Identifies patterns such as having higher fees for specialized services or consistent fee structures
 
-6. **Examples Directory (`multiple_products/examples/`)**
-   - **`2_products.png`, `3_products.png`, `4_products.png`**: Provide specific examples of fee structures for advisers offering 2, 3, and 4 different products respectively
-   - Serve as case studies to understand real-world fee structure variations
+### Examples of Multiple Products
 
-   ![Example: 2 Products](multiple_products/examples/2_products.png)
+#### 2 Products Example
+![2 Products Example](multiple_products/examples/2_products.png)
+- Shows an example of an adviser offering 2 different products with their fee structures
 
-#### Visualizations Directory (`visualizations/`)
+#### 3 Products Example
+![3 Products Example](multiple_products/examples/3_products.png)
+- Shows an example of an adviser offering 3 different products with their fee structures
 
-1. **`product_count_vs_max_tiers.png`**
-   - Examines the relationship between the number of products an adviser offers and the maximum number of fee tiers they use
-   - Helps understand if product diversification correlates with more complex fee structures
+#### 4 Products Example
+![4 Products Example](multiple_products/examples/4_products.png)
+- Shows an example of an adviser offering 4 different products with their fee structures
 
-   ![Product Count vs Max Tiers](visualizations/product_count_vs_max_tiers.png)
+## Visualizations Directory
 
-2. **`fee_percentages_product_0.png`, `fee_percentages_product_1.png`, etc.**
-   - Show the distribution of fee percentages by tier for each product category (0, 1, 2, 3)
-   - Help compare fee structures across different types of advisory services
+### Product Count vs Max Tiers
+![Product Count vs Max Tiers](visualizations/product_count_vs_max_tiers.png)
+- Examines the relationship between the number of products an adviser offers and the maximum number of fee tiers
+- Helps understand if product diversification correlates with more complex fee structures
 
-3. **Examples Directory (`visualizations/examples/`)**
-   - **`single_product_multi_tier.png`**: Provides a detailed example of an adviser offering a single product with multiple fee tiers, showing how fees decrease as asset levels increase
-   - **`multiple_products.png`**: Shows an example of an adviser offering multiple products with different fee structures, illustrating real-world product differentiation strategies
+### Fee Percentages by Product
 
-   ![Single Product Multi Tier Example](visualizations/examples/single_product_multi_tier.png)
+#### Product 0 Fee Percentages
+![Product 0 Fee Percentages](visualizations/fee_percentages_product_0.png)
+- Shows the distribution of fee percentages by tier for the first product category
 
-4. **Comparison Directory (`visualizations/comparison/`)**
-   - **`first_tier_distribution.png`**: Shows the distribution of first-tier fees across all advisers, helping identify the most common entry-level fees in the market
-   - **`first_tier_by_year.png`**: Tracks how first-tier fees have changed over time, revealing market pricing trends for entry-level advisory services
-   - **`adviser_*_fee_changes.png`**: Track how specific advisers have changed their fee structures over time, providing case studies of individual pricing strategies and adaptations
+#### Product 1 Fee Percentages
+![Product 1 Fee Percentages](visualizations/fee_percentages_product_1.png)
+- Shows the distribution of fee percentages by tier for the second product category
 
-   ![First Tier Distribution](visualizations/comparison/first_tier_distribution.png)
+#### Product 2 Fee Percentages
+![Product 2 Fee Percentages](visualizations/fee_percentages_product_2.png)
+- Shows the distribution of fee percentages by tier for the third product category
 
-   ![First Tier By Year](visualizations/comparison/first_tier_by_year.png)
+#### Product 3 Fee Percentages
+![Product 3 Fee Percentages](visualizations/fee_percentages_product_3.png)
+- Shows the distribution of fee percentages by tier for the fourth product category
 
-#### Analysis Results Directory (`analysis_results/`)
+### Example Visualizations
 
-1. **`fee_structure_types.png`**
-   - Categorizes and displays the distribution of different fee structure types used by advisers (e.g., tiered, flat, hybrid)
-   - Helps understand the prevalence of different pricing models in the industry
+#### Single Product with Multiple Tiers
+![Single Product Multi Tier Example](visualizations/examples/single_product_multi_tier.png)
+- Provides a detailed example of an adviser offering a single product with multiple fee tiers
+- Shows how fees decrease as asset levels increase
 
-   ![Fee Structure Types](analysis_results/fee_structure_types.png)
+#### Multiple Products Example
+![Multiple Products Example](visualizations/examples/multiple_products.png)
+- Shows an example of an adviser offering multiple products with different fee structures
+- Illustrates real-world product differentiation strategies
 
-2. **`negotiable_fees.png`**
-   - Shows the proportion of advisers who offer negotiable fees versus those with fixed fee structures
-   - Reveals flexibility in pricing across the industry
+### Comparison Visualizations
 
-   ![Negotiable Fees](analysis_results/negotiable_fees.png)
+#### First Tier Distribution
+![First Tier Distribution](visualizations/comparison/first_tier_distribution.png)
+- Shows the distribution of first-tier fees across all advisers
+- Helps identify the most common entry-level fees in the market
+
+#### First Tier By Year
+![First Tier By Year](visualizations/comparison/first_tier_by_year.png)
+- Tracks how first-tier fees have changed over time
+- Reveals market pricing trends for entry-level advisory services
+
+#### Adviser Fee Changes Over Time
+
+##### Adviser 100 Fee Changes
+![Adviser 100 Fee Changes](visualizations/comparison/adviser_100_fee_changes.png)
+- Tracks how Adviser 100 has changed their fee structure over time
+
+##### Adviser 1037 Fee Changes
+![Adviser 1037 Fee Changes](visualizations/comparison/adviser_1037_fee_changes.png)
+- Tracks how Adviser 1037 has changed their fee structure over time
+
+##### Adviser 10046 Fee Changes
+![Adviser 10046 Fee Changes](visualizations/comparison/adviser_10046_fee_changes.png)
+- Tracks how Adviser 10046 has changed their fee structure over time
+
+##### Adviser 10091 Fee Changes
+![Adviser 10091 Fee Changes](visualizations/comparison/adviser_10091_fee_changes.png)
+- Tracks how Adviser 10091 has changed their fee structure over time
+
+##### Adviser 10105 Fee Changes
+![Adviser 10105 Fee Changes](visualizations/comparison/adviser_10105_fee_changes.png)
+- Tracks how Adviser 10105 has changed their fee structure over time
 
 ## Key Findings
 

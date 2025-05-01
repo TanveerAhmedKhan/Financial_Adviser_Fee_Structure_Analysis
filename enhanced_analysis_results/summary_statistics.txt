@@ -1,0 +1,68 @@
+ENHANCED FEE ANALYSIS SUMMARY STATISTICS
+=======================================
+
+Total records: 1734
+Unique advisers: 120
+Unique advisers with fee information: 118
+
+Unique advisers by year:
+  2007: 12
+  2008: 9
+  2009: 10
+  2010: 12
+  2011: 108
+  2012: 100
+  2013: 90
+  2014: 90
+  2015: 92
+  2016: 87
+  2017: 84
+  2018: 82
+
+Contract types:
+  AUM-Based Only: 922 (53.2%)
+  Flat Fee Only: 521 (30.0%)
+  Both: 178 (10.3%)
+  No Fee Info: 113 (6.5%)
+
+Flat fee statistics:
+  count: 176.0
+  mean: 1129.9615056818182
+  std: 2572.164583010165
+  min: 0.075
+  25%: 2.25
+  50%: 400.0
+  75%: 1200.0
+  max: 25000.0
+
+Effective fee on $1M portfolio:
+  count: 1734.0
+  mean: 1.2361738916636205
+  std: 0.4361430941923949
+  min: 0.500377760987319
+  25%: 0.8556771796745359
+  50%: 1.2398030681959222
+  75%: 1.614006929526365
+  max: 1.9999202032951
+
+Effective fee on $5M portfolio:
+  count: 1734.0
+  mean: 0.8932897972474908
+  std: 0.3501095746324158
+  min: 0.3025959983501587
+  25%: 0.5819974843659642
+  50%: 0.8862549466006423
+  75%: 1.197530778938667
+  max: 1.49939218119299
+
+Minimum investment statistics:
+  count: 429.0
+  mean: 104328.8275058275
+  std: 187020.71865913313
+  min: 0.0
+  25%: 1100.0
+  50%: 10000.0
+  75%: 100000.0
+  max: 750000.0
+
+Negotiable fee percentage: 62.1%

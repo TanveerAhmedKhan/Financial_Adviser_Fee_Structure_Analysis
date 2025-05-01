@@ -50,6 +50,13 @@ The project consists of several Python scripts, each focusing on different aspec
    - Runs scripts in sequence and handles errors
    - Generates a summary report of all analyses
 
+7. **Enhanced Fee Analysis Scripts**
+   - **`enhanced_fee_analysis_step1.py`**: Extracts adviser IDs and filing dates from filenames
+   - **`enhanced_fee_analysis_step2.py`**: Processes flat fee information
+   - **`enhanced_fee_analysis_step3.py`**: Processes fee thresholds and identifies products
+   - **`enhanced_fee_analysis_step4.py`**: Processes minimum investment and negotiability information
+   - **`enhanced_fee_analysis_step5.py`**: Generates summary statistics and visualizations
+
 ### Output Files
 
 1. **`cleaned_fee_data.csv`**
@@ -76,9 +83,54 @@ The project consists of several Python scripts, each focusing on different aspec
    - Includes key findings, challenges, and recommendations
    - Discusses data irregularities and future work
 
+6. **Enhanced Analysis Results**
+   - **`enhanced_analysis_results/summary_statistics.txt`**: Comprehensive summary statistics
+   - **`enhanced_analysis_results/consolidated_fee_data.csv`**: Cleaned and consolidated fee data
+   - Various visualizations in the `enhanced_analysis_results` directory
+
 ### Visualizations
 
 The scripts generate various visualizations to help understand the data. These visualizations are organized into several directories. Below are all the visualizations with descriptions:
+
+## Enhanced Analysis Visualizations
+
+### Contract Type Distribution
+![Contract Type Distribution](enhanced_analysis_results/contract_type_distribution.png)
+- Shows the distribution of different contract types (Flat Fee Only, AUM-Based Only, Both, No Fee Info)
+- Reveals that 53.2% of advisers use AUM-based fees only, 30.0% use flat fees only, and 10.3% use both
+
+### Effective Fee Comparison
+![Effective Fee Comparison](enhanced_analysis_results/effective_fee_comparison.png)
+- Compares effective fees for $1M and $5M portfolios
+- Shows how fees decrease significantly as portfolio size increases
+- Average effective fee for $1M portfolio: 1.24%
+- Average effective fee for $5M portfolio: 0.89%
+
+### Minimum Investment Distribution
+![Minimum Investment Distribution](enhanced_analysis_results/min_investment_distribution.png)
+- Shows the distribution of minimum investment requirements on a logarithmic scale
+- Median minimum investment: $10,000
+- 75th percentile: $100,000
+
+### Negotiable Fee Distribution
+![Negotiable Fee Distribution](enhanced_analysis_results/negotiable_fee_distribution.png)
+- Shows the proportion of advisers offering negotiable vs. non-negotiable fees
+- 62.1% of advisers offer negotiable fees
+
+### Contract Types by Year
+![Contract Types by Year](enhanced_analysis_results/contract_types_by_year.png)
+- Shows how the distribution of contract types has changed over time
+- Tracks the evolution of fee structures in the industry from 2007 to 2018
+
+### Effective Fees by Year
+![Effective Fees by Year](enhanced_analysis_results/effective_fees_by_year.png)
+- Shows how effective fees for $1M portfolios have changed over time
+- Helps identify trends in fee levels across the industry
+
+### Minimum Investment by Year
+![Minimum Investment by Year](enhanced_analysis_results/min_investment_by_year.png)
+- Shows how minimum investment requirements have changed over time
+- Displays both mean and median values to account for outliers
 
 ## Root Directory Visualizations
 
@@ -265,22 +317,36 @@ The scripts generate various visualizations to help understand the data. These v
    - Flat fee structures: 11.0% of advisers
    - No fee information: 29.3% of advisers
 
-2. **Fee Percentages**
+2. **Contract Types (Enhanced Analysis)**
+   - AUM-Based Only: 53.2% of advisers
+   - Flat Fee Only: 30.0% of advisers
+   - Both AUM-Based and Flat Fee: 10.3% of advisers
+   - No Fee Information: 6.5% of advisers
+
+3. **Fee Percentages**
    - Average fee for the first tier: 1.22%
    - Average fee for the second tier: 1.02%
    - Average fee for the third tier: 0.86%
    - Clear pattern of decreasing fees as AUM increases
 
-3. **Negotiable Fees**
-   - 89.4% of advisers offer negotiable fees
-   - 10.6% have non-negotiable fees
+4. **Effective Fees (Enhanced Analysis)**
+   - Average effective fee for $1M portfolio: 1.24%
+   - Average effective fee for $5M portfolio: 0.89%
+   - Median effective fee for $1M portfolio: 1.24%
+   - Median effective fee for $5M portfolio: 0.89%
 
-4. **Minimum Investment**
-   - Median minimum investment: $100,000
-   - Average minimum investment: $1,985,895
+5. **Negotiable Fees**
+   - Original analysis: 89.4% of advisers offer negotiable fees
+   - Enhanced analysis: 62.1% of advisers offer negotiable fees
+   - Difference due to improved data cleaning and extraction methods
+
+6. **Minimum Investment**
+   - Original analysis: Median minimum investment: $100,000
+   - Enhanced analysis: Median minimum investment: $10,000
+   - 75th percentile: $100,000
    - Large variation in minimum requirements
 
-5. **Multiple Products**
+7. **Multiple Products**
    - 54.2% of advisers potentially offer multiple products
    - Average fee difference between products: 0.42 percentage points
    - Average tier difference between products: 0.86 tiers
@@ -317,7 +383,18 @@ The scripts generate various visualizations to help understand the data. These v
    ```
    This will run all analysis scripts in sequence and generate a comprehensive report.
 
-3. **Individual Analyses**
+3. **Enhanced Fee Analysis**
+   ```
+   # Run each step individually for detailed analysis
+   python enhanced_fee_analysis_step1.py
+   python enhanced_fee_analysis_step2.py
+   python enhanced_fee_analysis_step3.py
+   python enhanced_fee_analysis_step4.py
+   python enhanced_fee_analysis_step5.py
+   ```
+   This step-by-step approach provides detailed insights into each aspect of the fee data.
+
+4. **Individual Analyses**
    - For data cleaning: `python fee_data_cleaning.py`
    - For fee structure analysis: `python fee_structure_analysis.py`
    - For visualizations: `python fee_visualization.py`

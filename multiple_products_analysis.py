@@ -199,16 +199,42 @@ def visualize_multiple_product_examples(multiple_products_df):
     # Create a directory for examples
     os.makedirs('multiple_products/examples', exist_ok=True)
 
+    print("\nGenerating multiple product examples:")
+    print(f"Total advisers with multiple products: {len(multiple_products_df)}")
+
     # Select a few examples with different product counts
     for product_count in range(2, min(6, multiple_products_df['product_count'].max() + 1)):
         # Find advisers with this product count
         examples = multiple_products_df[multiple_products_df['product_count'] == product_count]
+        print(f"\nAdvisers with {product_count} products: {len(examples)}")
 
         if examples.empty:
             continue
 
-        # Take the first example
-        example = examples.iloc[0]
+        # Find advisers with actual fee tier data
+        valid_examples = []
+        for idx, row in examples.iterrows():
+            has_data = False
+            for product in range(product_count):
+                for i in range(5):  # Check up to 5 tiers
+                    fee_pct_col = f'product_{product}_tier_{i}_fee_pct'
+                    lower_col = f'product_{product}_tier_{i}_lower'
+                    if fee_pct_col in row.index and lower_col in row.index:
+                        if not pd.isna(row[fee_pct_col]) and not pd.isna(row[lower_col]):
+                            has_data = True
+                            break
+                if has_data:
+                    break
+            if has_data:
+                valid_examples.append(idx)
+
+        if not valid_examples:
+            print(f"No advisers with {product_count} products have valid fee tier data. Skipping.")
+            continue
+
+        # Take the first valid example
+        example = multiple_products_df.loc[valid_examples[0]]
+        print(f"Selected adviser ID: {example['adviser_id1']}")
 
         # Create a figure with subplots for each product
         fig, axes = plt.subplots(product_count, 1, figsize=(12, 4 * product_count))
@@ -234,6 +260,8 @@ def visualize_multiple_product_examples(multiple_products_df):
                         # Skip columns that don't have a numeric tier
                         continue
 
+            print(f"  Product {product+1} has maximum {max_tier} tiers")
+
             for i in range(max_tier):
                 lower_col = f'product_{product}_tier_{i}_lower'
                 upper_col = f'product_{product}_tier_{i}_upper'
@@ -253,6 +281,8 @@ def visualize_multiple_product_examples(multiple_products_df):
                         else:
                             labels.append(f"${lower:,.0f}-${upper:,.0f}")
 
+                        print(f"    Tier {i+1}: {labels[-1]} = {fee_pct}%")
+
             # Plot the tiers for this product
             if tiers:
                 axes[product].bar(labels, tiers)
@@ -261,11 +291,22 @@ def visualize_multiple_product_examples(multiple_products_df):
                 axes[product].set_title(f'Product {product+1}')
                 axes[product].tick_params(axis='x', rotation=45)
                 axes[product].grid(True, linestyle='--', alpha=0.7)
+            else:
+                print(f"    WARNING: No valid tiers found for Product {product+1}")
+                # Add text to the empty subplot
+                axes[product].text(0.5, 0.5, 'No fee tier data available',
+                                 horizontalalignment='center',
+                                 verticalalignment='center',
+                                 transform=axes[product].transAxes,
+                                 fontsize=14)
+                axes[product].set_title(f'Product {product+1} - No Data')
+                axes[product].axis('off')
 
         plt.suptitle(f'Example: {product_count} Products (Adviser ID: {example["adviser_id1"]})')
         plt.tight_layout()
         plt.savefig(f'multiple_products/examples/{product_count}_products.png')
         plt.close()
+        print(f"  Saved visualization to multiple_products/examples/{product_count}_products.png")
 
     return True
 

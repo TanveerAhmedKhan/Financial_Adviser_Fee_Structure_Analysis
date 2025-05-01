@@ -57,6 +57,11 @@ The project consists of several Python scripts, each focusing on different aspec
    - **`enhanced_fee_analysis_step4.py`**: Processes minimum investment and negotiability information
    - **`enhanced_fee_analysis_step5.py`**: Generates summary statistics and visualizations
 
+8. **`generate_example_visualizations.py`**
+   - Creates visualizations of advisers with multiple products
+   - Ensures examples have valid fee tier data
+   - Generates clear examples of different product structures
+
 ### Output Files
 
 1. **`cleaned_fee_data.csv`**
@@ -393,12 +398,20 @@ The scripts generate various visualizations to help understand the data. These v
    python enhanced_fee_analysis_step5.py
    ```
    This step-by-step approach provides detailed insights into each aspect of the fee data.
+   Each script builds on the results of the previous step, with the final step generating
+   comprehensive summary statistics and visualizations in the `enhanced_analysis_results` directory.
 
 4. **Individual Analyses**
    - For data cleaning: `python fee_data_cleaning.py`
    - For fee structure analysis: `python fee_structure_analysis.py`
    - For visualizations: `python fee_visualization.py`
    - For multiple products analysis: `python multiple_products_analysis.py`
+
+5. **Generate Multiple Products Examples**
+   ```
+   python generate_example_visualizations.py
+   ```
+   This script generates clear examples of advisers with multiple products, ensuring that the examples have valid fee tier data.
 
 ## Future Work
 
